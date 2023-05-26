@@ -1,3 +1,5 @@
+import math
+
 x = int(input())
 
 for _ in range(x):
@@ -11,6 +13,8 @@ for _ in range(x):
                 f.append(x)
                 used.append(x)
                 n = n/x
+                break
+            elif x > math.sqrt(n):
                 break
             else:
                 x += 1
