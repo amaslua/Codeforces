@@ -7,17 +7,11 @@ if n == m:
 else:
     ma = int(math.comb(n-m+1, 2))
 
-    l = [int(n/m)] * m
+    l = int(n/m)
     remainder = int((n/m - int(n/m)) * m+0.5)
 
 
 
-    mi = 0
-    for i in l:
-        if remainder > 0:
-            mi += math.comb(i+1, 2)
-            remainder -= 1
-        else:
-            mi += math.comb(i, 2)
-
+    mi = math.comb(l+1, 2) * remainder
+    mi += math.comb(l, 2) * (m-remainder)
     print(mi, ma)
